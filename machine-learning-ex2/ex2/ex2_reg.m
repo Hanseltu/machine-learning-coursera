@@ -117,6 +117,7 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 
 % Plot Boundary
+pause;
 plotDecisionBoundary(theta, X, y);
 hold on;
 title(sprintf('lambda = %g', lambda))
@@ -127,6 +128,8 @@ ylabel('Microchip Test 2')
 
 legend('y = 1', 'y = 0', 'Decision boundary')
 hold off;
+
+pause;
 
 % Compute accuracy on our training set
 p = predict(theta, X);
