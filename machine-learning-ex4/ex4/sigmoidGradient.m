@@ -14,7 +14,7 @@ g = zeros(size(z));
 
 
 
-
+g = exp(-z) ./ ((1.0 + exp(-z)) .^ 2);
 
 
 
