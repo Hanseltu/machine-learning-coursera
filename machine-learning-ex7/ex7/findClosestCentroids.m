@@ -21,6 +21,18 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
+for i = 1 : size(X, 1)
+  minDist = 1000000;
+  minDistIdx = 0;
+  for j = 1 : K
+    dist = sqrt(sum(power((X(i,:) - centroids(j,:)),2)));
+    if dist < minDist
+      minDist = dist;
+      minDistIdx = j;
+    end
+    idx(i,1) = minDistIdx;
+  end
+end
 
 
 
