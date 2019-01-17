@@ -22,8 +22,12 @@ sigma2 = zeros(n, 1);
 %
 
 
+if m != 0
+  mu = 1/m * sum(X)
+end
 
 
+sigma2 = 1/m * sum((X - repmat(mu, m, 1)).^2);
 
 
 
